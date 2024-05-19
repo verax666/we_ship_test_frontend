@@ -1,5 +1,7 @@
 import { Carrier } from "./carrier";
 import { CreatedBy } from "./createdby";
+import { Event } from "./event";
+import { ItemsShipment } from "./itemsShipment";
 import { Order } from "./order";
 import { Org } from "./org";
 import { Subscription } from "./subscription";
@@ -26,7 +28,7 @@ export interface Shipment {
   shipperProvince: string;
   shipperCountryCode: string;
   shipperProvinceCode: string;
-  items: { title: string,name: string; id: number; image?: string,sku: string     }[];
+  items: ItemsShipment[];
   events: Event[];
   deadline: string;
   estimatedDelivery: any;

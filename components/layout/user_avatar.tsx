@@ -1,4 +1,4 @@
-import { Avatar, Col, Row,   } from "antd";
+import { Avatar, Col, Row } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { useContext, useEffect, useState } from "react";
 
@@ -40,7 +40,6 @@ export default function UserAvatar() {
     <Row justify={size?.width > 820 ? "end" : "center"} align={"middle"}>
       {/* <Col span={10} /> */}
 
-
       <Row
         style={{ height: 80, lineHeight: 1, marginRight: 10 }}
         justify={"center"}
@@ -55,7 +54,14 @@ export default function UserAvatar() {
             marginTop: 4,
           }}
         >
-          <p>Jonathan Alejandro Flores Saldaña</p>
+          {size?.width > 820 ? (
+            <p>Jonathan Alejandro Flores Saldaña</p>
+          ) : (
+            <Avatar
+              size={55}
+              icon={<UserOutlined style={{ verticalAlign: "middle" }} />}
+            />
+          )}
           <p
             style={{
               color: "green",
@@ -68,16 +74,14 @@ export default function UserAvatar() {
           </p>
         </span>
       </Row>
-      {
-        size?.width > 820 ?
-          <Col>
-            <Avatar
-              size={55}
-              icon={<UserOutlined style={{ verticalAlign: "middle" }} />}
-            />
-          </Col> : null
-      }
-     
+      {size?.width > 820 ? (
+        <Col>
+          <Avatar
+            size={55}
+            icon={<UserOutlined style={{ verticalAlign: "middle" }} />}
+          />
+        </Col>
+      ) : null}
     </Row>
   );
 }

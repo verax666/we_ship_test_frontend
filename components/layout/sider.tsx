@@ -9,7 +9,7 @@ import {
   Divider,
 } from "antd";
 import { useContext, useEffect, useState } from "react";
-import { LogoutOutlined } from "@ant-design/icons";
+import { TruckOutlined } from "@ant-design/icons";
 import { useWindowSize } from "./user_avatar";
 import { COLLAPSED_MENU_LAYOUT } from "@/contexts/collapsed";
 import { useRouter } from "next/router";
@@ -61,6 +61,7 @@ export default function SiderLayout() {
       collapsed={!collapsed}
     >
       <Row style={{ backgroundColor: "white", padding: 10 }} justify={"center"}>
+        <Image preview={false} src="https://assets-global.website-files.com/6210259c8729036c3fdccb2d/6226860b84a75d441cad78f7_Logo-WeShip-Landing-Azulv2.png" />
         <Divider style={{ margin: "10px 0px" }} />
       </Row>
       <Menu
@@ -72,7 +73,7 @@ export default function SiderLayout() {
             "Shipments",
             `shipments`,
             () => {},
-            <LogoutOutlined style={{ color: "red" }} />
+            <TruckOutlined />
           ),
         ]}
       />
@@ -86,7 +87,7 @@ export default function SiderLayout() {
           color: "black",
         }}
       >
-        Versión 1
+         Demo
       </div>
     </Layout.Sider>
   );
