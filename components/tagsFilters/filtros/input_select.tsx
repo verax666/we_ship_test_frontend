@@ -1,5 +1,4 @@
 import { Col, Form, FormInstance, Select } from "antd";
-import { filterOptionSelect } from "../../../components/residuos/create/createModal";
 
 export default function InputSelect(props: {
   items: any[];
@@ -14,18 +13,21 @@ export default function InputSelect(props: {
   return (
     <>
       <Form form={form}>
-
-        <Form.Item rules={[{ required: is_required }]} name={name} label={label} labelCol={{ span: 24 }}>
+        <Form.Item
+          rules={[{ required: is_required }]}
+          name={name}
+          label={label}
+          labelCol={{ span: 24 }}
+        >
           <Select
             style={{ minWidth: 400 }}
             showSearch
             allowClear
-            {...filterOptionSelect}
             options={[
-              ...items?.map((item: any) => ({
+              ...(items?.map((item: any) => ({
                 value: item?.id,
                 label: item?.nombre,
-              })) ?? [],
+              })) ?? []),
             ]}
             placeholder={label}
           />

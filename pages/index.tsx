@@ -76,6 +76,7 @@ export default function Home() {
           content: `${catchError.error}`,
           footer: [
             <Button
+            key={"CloseModalEvents"}
               onClick={() => {
                 Modal.destroyAll();
                 getShipments(filter);
